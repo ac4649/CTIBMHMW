@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DC751951F900CAB00FE0131 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751941F900CAB00FE0131 /* AppDelegate.swift */; };
+		4DC751971F900CAB00FE0131 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751961F900CAB00FE0131 /* ViewController.swift */; };
+		4DC7519A1F900CAB00FE0131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC751981F900CAB00FE0131 /* Main.storyboard */; };
+		4DC7519C1F900CAB00FE0131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7519B1F900CAB00FE0131 /* Assets.xcassets */; };
+		4DC7519F1F900CAB00FE0131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */; };
+		4DC751AA1F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751A91F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift */; };
+		4DC751B51F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DC751A61F900CAB00FE0131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DC751891F900CAA00FE0131 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DC751901F900CAB00FE0131;
+			remoteInfo = "CT-IBM-Cancer-App";
+		};
+		4DC751B11F900CAB00FE0131 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DC751891F900CAA00FE0131 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DC751901F900CAB00FE0131;
+			remoteInfo = "CT-IBM-Cancer-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4DC751911F900CAB00FE0131 /* CT-IBM-Cancer-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CT-IBM-Cancer-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DC751941F900CAB00FE0131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4DC751961F900CAB00FE0131 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DC751991F900CAB00FE0131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4DC7519B1F900CAB00FE0131 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DC7519E1F900CAB00FE0131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4DC751A01F900CAB00FE0131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC751A51F900CAB00FE0131 /* CT-IBM-Cancer-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CT-IBM-Cancer-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DC751A91F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CT_IBM_Cancer_AppTests.swift; sourceTree = "<group>"; };
+		4DC751AB1F900CAB00FE0131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC751B01F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CT-IBM-Cancer-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CT_IBM_Cancer_AppUITests.swift; sourceTree = "<group>"; };
+		4DC751B61F900CAB00FE0131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DC7518E1F900CAB00FE0131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC751A21F900CAB00FE0131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC751AD1F900CAB00FE0131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DC751881F900CAA00FE0131 = {
+			isa = PBXGroup;
+			children = (
+				4DC751931F900CAB00FE0131 /* CT-IBM-Cancer-App */,
+				4DC751A81F900CAB00FE0131 /* CT-IBM-Cancer-AppTests */,
+				4DC751B31F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests */,
+				4DC751921F900CAB00FE0131 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DC751921F900CAB00FE0131 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DC751911F900CAB00FE0131 /* CT-IBM-Cancer-App.app */,
+				4DC751A51F900CAB00FE0131 /* CT-IBM-Cancer-AppTests.xctest */,
+				4DC751B01F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DC751931F900CAB00FE0131 /* CT-IBM-Cancer-App */ = {
+			isa = PBXGroup;
+			children = (
+				4DC751941F900CAB00FE0131 /* AppDelegate.swift */,
+				4DC751961F900CAB00FE0131 /* ViewController.swift */,
+				4DC751981F900CAB00FE0131 /* Main.storyboard */,
+				4DC7519B1F900CAB00FE0131 /* Assets.xcassets */,
+				4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */,
+				4DC751A01F900CAB00FE0131 /* Info.plist */,
+			);
+			path = "CT-IBM-Cancer-App";
+			sourceTree = "<group>";
+		};
+		4DC751A81F900CAB00FE0131 /* CT-IBM-Cancer-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4DC751A91F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift */,
+				4DC751AB1F900CAB00FE0131 /* Info.plist */,
+			);
+			path = "CT-IBM-Cancer-AppTests";
+			sourceTree = "<group>";
+		};
+		4DC751B31F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */,
+				4DC751B61F900CAB00FE0131 /* Info.plist */,
+			);
+			path = "CT-IBM-Cancer-AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DC751901F900CAB00FE0131 /* CT-IBM-Cancer-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DC751B91F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-App" */;
+			buildPhases = (
+				4DC7518D1F900CAB00FE0131 /* Sources */,
+				4DC7518E1F900CAB00FE0131 /* Frameworks */,
+				4DC7518F1F900CAB00FE0131 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CT-IBM-Cancer-App";
+			productName = "CT-IBM-Cancer-App";
+			productReference = 4DC751911F900CAB00FE0131 /* CT-IBM-Cancer-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4DC751A41F900CAB00FE0131 /* CT-IBM-Cancer-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DC751BC1F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-AppTests" */;
+			buildPhases = (
+				4DC751A11F900CAB00FE0131 /* Sources */,
+				4DC751A21F900CAB00FE0131 /* Frameworks */,
+				4DC751A31F900CAB00FE0131 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DC751A71F900CAB00FE0131 /* PBXTargetDependency */,
+			);
+			name = "CT-IBM-Cancer-AppTests";
+			productName = "CT-IBM-Cancer-AppTests";
+			productReference = 4DC751A51F900CAB00FE0131 /* CT-IBM-Cancer-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4DC751AF1F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DC751BF1F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-AppUITests" */;
+			buildPhases = (
+				4DC751AC1F900CAB00FE0131 /* Sources */,
+				4DC751AD1F900CAB00FE0131 /* Frameworks */,
+				4DC751AE1F900CAB00FE0131 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DC751B21F900CAB00FE0131 /* PBXTargetDependency */,
+			);
+			name = "CT-IBM-Cancer-AppUITests";
+			productName = "CT-IBM-Cancer-AppUITests";
+			productReference = 4DC751B01F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DC751891F900CAA00FE0131 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Adrien Cogny";
+				TargetAttributes = {
+					4DC751901F900CAB00FE0131 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					4DC751A41F900CAB00FE0131 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4DC751901F900CAB00FE0131;
+					};
+					4DC751AF1F900CAB00FE0131 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4DC751901F900CAB00FE0131;
+					};
+				};
+			};
+			buildConfigurationList = 4DC7518C1F900CAA00FE0131 /* Build configuration list for PBXProject "CT-IBM-Cancer-App" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4DC751881F900CAA00FE0131;
+			productRefGroup = 4DC751921F900CAB00FE0131 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DC751901F900CAB00FE0131 /* CT-IBM-Cancer-App */,
+				4DC751A41F900CAB00FE0131 /* CT-IBM-Cancer-AppTests */,
+				4DC751AF1F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DC7518F1F900CAB00FE0131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC7519F1F900CAB00FE0131 /* LaunchScreen.storyboard in Resources */,
+				4DC7519C1F900CAB00FE0131 /* Assets.xcassets in Resources */,
+				4DC7519A1F900CAB00FE0131 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC751A31F900CAB00FE0131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC751AE1F900CAB00FE0131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DC7518D1F900CAB00FE0131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC751971F900CAB00FE0131 /* ViewController.swift in Sources */,
+				4DC751951F900CAB00FE0131 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC751A11F900CAB00FE0131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC751AA1F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DC751AC1F900CAB00FE0131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC751B51F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DC751A71F900CAB00FE0131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DC751901F900CAB00FE0131 /* CT-IBM-Cancer-App */;
+			targetProxy = 4DC751A61F900CAB00FE0131 /* PBXContainerItemProxy */;
+		};
+		4DC751B21F900CAB00FE0131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DC751901F900CAB00FE0131 /* CT-IBM-Cancer-App */;
+			targetProxy = 4DC751B11F900CAB00FE0131 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4DC751981F900CAB00FE0131 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DC751991F900CAB00FE0131 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DC7519E1F900CAB00FE0131 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4DC751B71F900CAB00FE0131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4DC751B81F900CAB00FE0131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4DC751BA1F900CAB00FE0131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
+				INFOPLIST_FILE = "CT-IBM-Cancer-App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DC751BB1F900CAB00FE0131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
+				INFOPLIST_FILE = "CT-IBM-Cancer-App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4DC751BD1F900CAB00FE0131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
+				INFOPLIST_FILE = "CT-IBM-Cancer-AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CT-IBM-Cancer-App.app/CT-IBM-Cancer-App";
+			};
+			name = Debug;
+		};
+		4DC751BE1F900CAB00FE0131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
+				INFOPLIST_FILE = "CT-IBM-Cancer-AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CT-IBM-Cancer-App.app/CT-IBM-Cancer-App";
+			};
+			name = Release;
+		};
+		4DC751C01F900CAB00FE0131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
+				INFOPLIST_FILE = "CT-IBM-Cancer-AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CT-IBM-Cancer-App";
+			};
+			name = Debug;
+		};
+		4DC751C11F900CAB00FE0131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
+				INFOPLIST_FILE = "CT-IBM-Cancer-AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CT-IBM-Cancer-App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DC7518C1F900CAA00FE0131 /* Build configuration list for PBXProject "CT-IBM-Cancer-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DC751B71F900CAB00FE0131 /* Debug */,
+				4DC751B81F900CAB00FE0131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DC751B91F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DC751BA1F900CAB00FE0131 /* Debug */,
+				4DC751BB1F900CAB00FE0131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DC751BC1F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DC751BD1F900CAB00FE0131 /* Debug */,
+				4DC751BE1F900CAB00FE0131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DC751BF1F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DC751C01F900CAB00FE0131 /* Debug */,
+				4DC751C11F900CAB00FE0131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4DC751891F900CAA00FE0131 /* Project object */;
+}
