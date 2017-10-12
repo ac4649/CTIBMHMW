@@ -14,6 +14,7 @@
 		4DC7519F1F900CAB00FE0131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */; };
 		4DC751AA1F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751A91F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift */; };
 		4DC751B51F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */; };
+		9A2EAA224F0D5E0490671D12 /* Pods_CT_IBM_Cancer_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7DE85D1CA6431CF86B1922 /* Pods_CT_IBM_Cancer_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E7DE85D1CA6431CF86B1922 /* Pods_CT_IBM_Cancer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CT_IBM_Cancer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC751911F900CAB00FE0131 /* CT-IBM-Cancer-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CT-IBM-Cancer-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC751941F900CAB00FE0131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DC751961F900CAB00FE0131 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		4DC751B01F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CT-IBM-Cancer-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CT_IBM_Cancer_AppUITests.swift; sourceTree = "<group>"; };
 		4DC751B61F900CAB00FE0131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EEF314D6512FA723C1EE20C /* Pods-CT-IBM-Cancer-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT-IBM-Cancer-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App.debug.xcconfig"; sourceTree = "<group>"; };
+		72390E7F9FDBBB83AB7022E6 /* Pods-CT-IBM-Cancer-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT-IBM-Cancer-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2EAA224F0D5E0490671D12 /* Pods_CT_IBM_Cancer_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				4DC751A81F900CAB00FE0131 /* CT-IBM-Cancer-AppTests */,
 				4DC751B31F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests */,
 				4DC751921F900CAB00FE0131 /* Products */,
+				60B3C1CB5CD9F5EC8411DB58 /* Pods */,
+				DBF14DA246826277E9F76FFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = "CT-IBM-Cancer-AppUITests";
 			sourceTree = "<group>";
 		};
+		60B3C1CB5CD9F5EC8411DB58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EEF314D6512FA723C1EE20C /* Pods-CT-IBM-Cancer-App.debug.xcconfig */,
+				72390E7F9FDBBB83AB7022E6 /* Pods-CT-IBM-Cancer-App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DBF14DA246826277E9F76FFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E7DE85D1CA6431CF86B1922 /* Pods_CT_IBM_Cancer_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DC751B91F900CAB00FE0131 /* Build configuration list for PBXNativeTarget "CT-IBM-Cancer-App" */;
 			buildPhases = (
+				B3A1DBD98C705DB9060CB431 /* [CP] Check Pods Manifest.lock */,
 				4DC7518D1F900CAB00FE0131 /* Sources */,
 				4DC7518E1F900CAB00FE0131 /* Frameworks */,
 				4DC7518F1F900CAB00FE0131 /* Resources */,
+				57B768AB1B9C2A25C46DAE77 /* [CP] Embed Pods Frameworks */,
+				8037D076DFFCB992A8D61479 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57B768AB1B9C2A25C46DAE77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8037D076DFFCB992A8D61479 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A1DBD98C705DB9060CB431 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CT-IBM-Cancer-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DC7518D1F900CAB00FE0131 /* Sources */ = {
@@ -424,6 +505,7 @@
 		};
 		4DC751BA1F900CAB00FE0131 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EEF314D6512FA723C1EE20C /* Pods-CT-IBM-Cancer-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +521,7 @@
 		};
 		4DC751BB1F900CAB00FE0131 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72390E7F9FDBBB83AB7022E6 /* Pods-CT-IBM-Cancer-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
