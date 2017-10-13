@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     //Fake data
     let numDataPoints = 42
-    let wellnessData = [0,5,3,4,4,10,10,10,8,7,4,3,2,1,0]
+    let wellnessData = [1,1,6,6,7,7,7,1,1,6,6,7,7,7,1,1,1,6,6,7,7,1,1,1,6,6,7,7,1,1,1,1,6,7,6,7,7,7,7,7,7,7]
     var wellnessLevels = [Int](repeating:0, count:42)
     
     // color selection
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     //view colors
     let calendarBackground = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha:1.0)
     let wellnessGood = UIColor(red:0.0, green:1.0, blue:0.0, alpha:1.0)
-    let wellnessMedium = UIColor(red:0.5, green:0.5, blue:0.0, alpha:1.0)
+    let wellnessMedium = UIColor(red:1.0, green:1.0, blue:0.0, alpha:1.0)
     let wellnessBad = UIColor(red:1.0, green:0.0, blue:0.0, alpha:1.0)
     
     let selectedDayBorderColor = UIColor(red:0.0, green:1.0, blue:1.0, alpha:1.0)
@@ -194,6 +194,8 @@ extension ViewController: JTAppleCalendarViewDelegate {
         
 
         cell.dataLabel.text  = cellState.text
+        print(cellState.date)
+        print(cell.wellnessLevel)
         
         handleCellSelection(view:cell, cellState:cellState)
         handleCellTextColor(view:cell, cellState: cellState)
