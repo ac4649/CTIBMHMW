@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     
     //Fake data
     let numDataPoints = 42
-    let wellnessData = [1,1,6,6,7,7,7,1,1,6,6,7,7,7,1,1,1,6,6,7,7,1,1,1,6,6,7,7,1,1,1,1,6,7,6,7,7,7,7,7,7,7]
+    //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
+    let wellnessData = [7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,1,1,1,1].reversed()
     var wellnessLevels = [Int](repeating:0, count:42)
     
     // color selection
@@ -105,6 +106,8 @@ class ViewController: UIViewController {
             print("Wellness level not appropriate")
             return
         }
+        
+        calView.reloadData()
     }
     
     
@@ -194,8 +197,8 @@ extension ViewController: JTAppleCalendarViewDelegate {
         
 
         cell.dataLabel.text  = cellState.text
-        print(cellState.date)
-        print(cell.wellnessLevel)
+//        print(cellState.date)
+//        print(cell.wellnessLevel)
         
         handleCellSelection(view:cell, cellState:cellState)
         handleCellTextColor(view:cell, cellState: cellState)
