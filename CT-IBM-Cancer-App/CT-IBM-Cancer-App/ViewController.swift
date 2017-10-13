@@ -209,17 +209,17 @@ class ViewController: UIViewController {
         
         dayStackView.addSubview(mylabel)
         
+        var i:Float = 1
+        
         for curText in dayMedication{
             var newLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
-            newLabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
+            newLabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:(CGFloat(30/2 + 30*i)))
             newLabel.textAlignment = .center
             newLabel.text = curText
             newLabel.backgroundColor = .white
             dayStackView.addSubview(newLabel)
-
+            i = i+1
         }
-        
-
         self.dayView.addSubview(dayStackView)
         
     }
