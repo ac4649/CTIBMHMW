@@ -48,10 +48,10 @@ class ViewController: UIViewController, UITextViewDelegate {
     //text colors
     let selectedDayTextColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     let currentMonthTextColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    let otherMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+    let otherMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.25)
     
     //view colors
-    let calendarBackground = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha:1.0)
+    let calendarBackground = UIColor(red: 1, green: 1, blue: 1, alpha:1.0)
     let wellnessGood = UIColor(red:0.463, green:0.69, blue:0.25, alpha:1.0)
     let wellnessMedium = UIColor(red:1.0, green:0.79, blue:0.078, alpha:1.0)
     let wellnessBad = UIColor(red:0.89, green:0.34, blue:0.18, alpha:1.0)
