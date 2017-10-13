@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     var wellnessLevels = [Int](repeating:0, count:42)
     
     let dayMedication = ["Docorubicin", "Taxol", "Zofran"]
+    let medDosage = ["1 - lunch","1 - Diner", "1 - Morning"]
     
     // color selection
     //text colors
@@ -210,15 +211,32 @@ class ViewController: UIViewController {
         dayStackView.addSubview(mylabel)
         
         var i:Float = 1
-        
+        var dosageIndex = 0
         for curText in dayMedication{
-            var newLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
-            newLabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:(CGFloat(30/2 + 30*i)))
-            newLabel.textAlignment = .center
-            newLabel.text = curText
-            newLabel.backgroundColor = .white
-            dayStackView.addSubview(newLabel)
+            var curVertStack = UIStackView(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
+            curVertStack.distribution = .equalSpacing
+            curVertStack.alignment = .fill
+            curVertStack.axis = .vertical
+            
+            var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
+            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4, y:(CGFloat(30/2 + 30*i)))
+            nameLabel.textAlignment = .center
+            nameLabel.text = curText
+            nameLabel.backgroundColor = .white
+            
+            curVertStack.addSubview(nameLabel)
+            
+            var dosageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
+            dosageLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:(CGFloat(30/2 + 30*i)))
+            dosageLabel.textAlignment = .center
+            dosageLabel.text = medDosage[dosageIndex]
+            dosageLabel.backgroundColor = .white
+            
+            curVertStack.addSubview(dosageLabel)
+
+            dayStackView.addSubview(curVertStack)
             i = i+1
+            dosageIndex = dosageIndex + 1
         }
         self.dayView.addSubview(dayStackView)
         
