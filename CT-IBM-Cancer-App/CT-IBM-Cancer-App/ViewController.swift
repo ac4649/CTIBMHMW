@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     //Fake data
     let numDataPoints = 42
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
-    let wellnessData = [1,1,1,4,4,4,7,7,7,5,5,5,5,2,2,2,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,1,1,1,1].reversed()
+    let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7].reversed()
     var wellnessLevels = [Int](repeating:0, count:42)
     
     let dayMedication = ["Docorubicin", "Taxol", "Zofran"]
