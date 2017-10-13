@@ -146,20 +146,45 @@
                                     <constraint firstAttribute="height" constant="20.5" id="dhO-PS-aA6"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KE-RI-SUZ">
+                                <rect key="frame" x="0.0" y="393" width="375" height="274"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-wk-FDc">
+                                        <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="KfO-jk-mJy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Sov-wk-FDc" secondAttribute="trailing" constant="8" id="hgv-cl-uHU"/>
+                                    <constraint firstAttribute="height" constant="274" id="mka-u5-Bzb"/>
+                                    <constraint firstItem="Sov-wk-FDc" firstAttribute="top" secondItem="5KE-RI-SUZ" secondAttribute="top" constant="8" id="x7f-nA-TUD"/>
+                                    <constraint firstItem="Sov-wk-FDc" firstAttribute="leading" secondItem="5KE-RI-SUZ" secondAttribute="leading" constant="8" id="xRO-wC-DLM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5KE-RI-SUZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Na6-9A-jJ0"/>
                             <constraint firstItem="MJu-gd-5m6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="53" id="P16-hV-9W1"/>
                             <constraint firstItem="MJu-gd-5m6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VkS-A1-Jy5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yi9-fM-kJi" secondAttribute="trailing" id="cl8-ws-UFa"/>
+                            <constraint firstItem="5KE-RI-SUZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cu4-pO-eqT"/>
                             <constraint firstItem="yi9-fM-kJi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="24" id="gL4-7V-EJU"/>
                             <constraint firstItem="yi9-fM-kJi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hs3-Up-Yro"/>
                             <constraint firstItem="MJu-gd-5m6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oi9-aZ-Gd0"/>
+                            <constraint firstItem="5KE-RI-SUZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tRd-D3-OxG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="calView" destination="MJu-gd-5m6" id="Rdw-CU-Jg3"/>
+                        <outlet property="dayViewTitle" destination="Sov-wk-FDc" id="MfL-Ih-s1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

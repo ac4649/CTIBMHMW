@@ -13,11 +13,13 @@ import JTAppleCalendar
 class ViewController: UIViewController {
     
     @IBOutlet weak var calView: JTAppleCalendarView!
+//    @IBOutlet weak var dayView: UIView
+    @IBOutlet weak var dayViewTitle:UILabel!
     
     
     //Fake data
     let numDataPoints = 42
-    let wellnessData = [0,5,3,4,4]
+    let wellnessData = [0,5,3,4,4,10,10,10,8,7,4,3,2,1,0]
     var wellnessLevels = [Int](repeating:0, count:42)
     
     // color selection
@@ -27,7 +29,7 @@ class ViewController: UIViewController {
     let otherMonthTextColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
     //view colors
-    let calendarBackground = UIColor(red:0.30, green:0.30, blue:0.30, alpha:1.0)
+    let calendarBackground = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha:1.0)
     let wellnessGood = UIColor(red:0.0, green:1.0, blue:0.0, alpha:1.0)
     let wellnessMedium = UIColor(red:0.5, green:0.5, blue:0.0, alpha:1.0)
     let wellnessBad = UIColor(red:1.0, green:0.0, blue:0.0, alpha:1.0)
@@ -54,10 +56,11 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         //load data and update the wellness status for the 42 days on screen
         var curDay = 0
+        print(wellnessLevels)
         for curCell in calView.visibleCells {
             guard let theCell = curCell as? CustomCell else {return}
-            updateWellness(cell: theCell)
             theCell.wellnessLevel = wellnessLevels[curDay]
+            updateWellness(cell: theCell)
             curDay = curDay + 1
         }
         
@@ -71,7 +74,7 @@ class ViewController: UIViewController {
     func prepareData(){
         var index = 0
         for curInt in wellnessData {
-            if curInt <= 3 && curInt > 0{
+            if curInt <= 3 && curInt >= 0{
                 wellnessLevels[index] = 0
             }
             else if curInt <= 6 && curInt > 3{
@@ -82,6 +85,7 @@ class ViewController: UIViewController {
             }
             index = index + 1
         }
+        
     }
     
     func updateWellness(cell: CustomCell?){
@@ -137,6 +141,9 @@ class ViewController: UIViewController {
             goodCell.selectedView.layer.borderColor = selectedDayBorderColor.cgColor
             goodCell.selectedView.layer.borderWidth = 5.0
             goodCell.selectedView.layer.backgroundColor = transparentColor.cgColor
+            
+            setDayViewTitle(newTitle: cellState.date.description)
+            
         }
         else {
             //not selected so hide it.
@@ -145,6 +152,17 @@ class ViewController: UIViewController {
         
     }
 
+    
+    // DAY VIEW FUNCTIONS
+    
+    func prepareDayView() {
+        
+    }
+    
+    func setDayViewTitle(newTitle: String) {
+        dayViewTitle.text = newTitle
+        
+    }
 
 }
 
