@@ -513,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A93823SCZ8;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
 				INFOPLIST_FILE = "CT-IBM-Cancer-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App";
@@ -529,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A93823SCZ8;
+				DEVELOPMENT_TEAM = WZ8783C5T9;
 				INFOPLIST_FILE = "CT-IBM-Cancer-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App";
