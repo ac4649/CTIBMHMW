@@ -213,13 +213,13 @@ class ViewController: UIViewController {
         var i:Float = 1
         var dosageIndex = 0
         for curText in dayMedication{
-            var curVertStack = UIStackView(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
+            var curVertStack = UIStackView(frame: CGRect(x: 0, y: (CGFloat(30/2 + 30*i)), width: self.dayStackView.frame.size.width, height: 30))
             curVertStack.distribution = .equalSpacing
             curVertStack.alignment = .fill
             curVertStack.axis = .vertical
             
             var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4, y:(CGFloat(30/2 + 30*i)))
+            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4, y:0.0)
             nameLabel.textAlignment = .center
             nameLabel.text = curText
             nameLabel.backgroundColor = .white
@@ -227,7 +227,7 @@ class ViewController: UIViewController {
             curVertStack.addSubview(nameLabel)
             
             var dosageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            dosageLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:(CGFloat(30/2 + 30*i)))
+            dosageLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:0.0)
             dosageLabel.textAlignment = .center
             dosageLabel.text = medDosage[dosageIndex]
             dosageLabel.backgroundColor = .white
