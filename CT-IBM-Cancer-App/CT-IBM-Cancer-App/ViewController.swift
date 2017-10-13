@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var calView: JTAppleCalendarView!
     @IBOutlet weak var dayView: UIView!
-    var dayViewTitle:UILabel!
-    var journalStackView: UIStackView = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 200))
-    var dayStackView: UIStackView = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 200))
+    var dayViewTitle:UILabel = UILabel()
+    var journalStackView: UIStackView = UIStackView()
+    var dayStackView: UIStackView = UIStackView()
     
     @IBOutlet weak var journalDayViewToggle: UISegmentedControl!
     
@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         prepareData()
+        prepareDayTitleLabel()
         prepareDayView()
         //remove the cell-spacing
         calView.minimumLineSpacing = 0
@@ -167,24 +168,23 @@ class ViewController: UIViewController {
     // DAY VIEW FUNCTIONS
     
     func prepareDayView() {
-        
-        dayStackView.frame = CGRect(x: 0.0, y: dayViewTitle.frame.height, width: self.dayView.frame.size.width, height: 200)
+        //create the stack view
+        dayStackView.frame = CGRect(x: 0.0, y: dayViewTitle.frame.size.height, width: self.dayView.frame.size.width, height: 200)
+        dayStackView.distribution = .equalSpacing
+        dayStackView.alignment = .fill
+        dayStackView.axis = .horizontal
+        dayStackView.backgroundColor = .red
+        print("adding constraint")
 
-        
         // add a meds list
-        var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayView.frame.size.width, height: 21))
-        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:21/2)
+        var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
+        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
         mylabel.textAlignment = .center
         mylabel.text = "medslist"
         mylabel.backgroundColor = .white
         
-        
-
-        
-        
-        dayStackView.distribution = .equalSpacing
-        dayStackView.axis = .horizontal
         dayStackView.addSubview(mylabel)
+
         self.dayView.addSubview(dayStackView)
         
     }
@@ -193,9 +193,17 @@ class ViewController: UIViewController {
         dayViewTitle.text = newTitle
         
     }
+    func prepareDayTitleLabel() {
+        dayViewTitle.textAlignment = .center
+        dayViewTitle.frame = CGRect(x: 0.0, y: 0.0, width: self.dayView.frame.size.width, height: 20)
+        print(dayViewTitle)
+        //add the title to the detail view
+        dayView.addSubview(dayViewTitle)
+    }
     
     func prepareJournalView() {
         //
+        
     }
 }
 
