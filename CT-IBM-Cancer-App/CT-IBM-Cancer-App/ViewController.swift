@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     
     //view colors
     let calendarBackground = UIColor(red:0.0, green:255.0, blue:0.0, alpha:1.0)
-    
-    
-    //
+    let wellnessGood = UIColor(red:0.0, green:255.0, blue:0.0, alpha:1.0)
+    let wellnessMedium = UIColor(red:100.0, green:100.0, blue:0.0, alpha:1.0)
+    let wellnessBad = UIColor(red:255.0, green:0.0, blue:0.0, alpha:1.0)
     
     
     
@@ -38,11 +38,41 @@ class ViewController: UIViewController {
         calView.minimumLineSpacing = 0
         calView.minimumInteritemSpacing = 0
         calView.backgroundColor = calendarBackground
+        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("before loop")
+        for curCell in calView.visibleCells {
+            guard let theCell = curCell as? CustomCell else {return}
+            updateWellness(cell: theCell)
+        }
+        print("ending loop")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateWellness(cell: CustomCell?){
+        guard let goodCell = cell as? CustomCell else {return}
+        print("wellness level = ")
+        print(goodCell.wellnessLevel)
+        if (goodCell.wellnessLevel == 0){
+            goodCell.wellnessLevelView.backgroundColor = wellnessBad
+        }
+        else if (goodCell.wellnessLevel == 1){
+            goodCell.wellnessLevelView.backgroundColor = wellnessMedium
+        }
+        else if (goodCell.wellnessLevel == 2){
+            goodCell.wellnessLevelView.backgroundColor = wellnessGood
+        }
+        else {
+            print("Wellness level not appropriate")
+            return
+        }
     }
     
     
