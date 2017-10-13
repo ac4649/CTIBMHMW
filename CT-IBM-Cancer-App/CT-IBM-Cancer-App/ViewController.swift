@@ -20,20 +20,20 @@ class ViewController: UIViewController {
     //Fake data
     let numDataPoints = 42
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
-    let wellnessData = [7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,1,1,1,1].reversed()
+    let wellnessData = [1,1,1,4,4,4,7,7,7,5,5,5,5,2,2,2,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,1,1,1,1].reversed()
     var wellnessLevels = [Int](repeating:0, count:42)
     
     // color selection
     //text colors
     let selectedDayTextColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    let currentMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
-    let otherMonthTextColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    let currentMonthTextColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    let otherMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
     
     //view colors
     let calendarBackground = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha:1.0)
-    let wellnessGood = UIColor(red:0.0, green:1.0, blue:0.0, alpha:1.0)
-    let wellnessMedium = UIColor(red:1.0, green:1.0, blue:0.0, alpha:1.0)
-    let wellnessBad = UIColor(red:1.0, green:0.0, blue:0.0, alpha:1.0)
+    let wellnessGood = UIColor(red:0.463, green:0.69, blue:0.25, alpha:1.0)
+    let wellnessMedium = UIColor(red:1.0, green:0.79, blue:0.078, alpha:1.0)
+    let wellnessBad = UIColor(red:0.89, green:0.34, blue:0.18, alpha:1.0)
     
     let selectedDayBorderColor = UIColor(red:0.0, green:1.0, blue:1.0, alpha:1.0)
     let transparentColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.0)
