@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var calView: JTAppleCalendarView!
     
+    
+    //Fake data
+    let numDataPoints = 42
+    let wellnessData = [0,5,3,4,4]
+    var wellnessLevels = [Int](repeating:0, count:42)
+    
     // color selection
     //text colors
     let selectedDayTextColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -36,6 +42,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        prepareData()
+        
         //remove the cell-spacing
         calView.minimumLineSpacing = 0
         calView.minimumInteritemSpacing = 0
@@ -44,17 +52,36 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("before loop")
+        //load data and update the wellness status for the 42 days on screen
+        var curDay = 0
         for curCell in calView.visibleCells {
             guard let theCell = curCell as? CustomCell else {return}
             updateWellness(cell: theCell)
+            theCell.wellnessLevel = wellnessLevels[curDay]
+            curDay = curDay + 1
         }
-        print("ending loop")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func prepareData(){
+        var index = 0
+        for curInt in wellnessData {
+            if curInt <= 3 && curInt > 0{
+                wellnessLevels[index] = 0
+            }
+            else if curInt <= 6 && curInt > 3{
+                wellnessLevels[index] = 1
+            }
+            else {
+                wellnessLevels[index] = 2
+            }
+            index = index + 1
+        }
     }
     
     func updateWellness(cell: CustomCell?){

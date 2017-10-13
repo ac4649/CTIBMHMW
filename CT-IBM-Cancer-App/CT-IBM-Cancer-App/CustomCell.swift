@@ -14,7 +14,7 @@ class CustomCell: JTAppleCell {
     @IBOutlet weak var selectedView: UIView!
     @IBOutlet weak var wellnessLevelView: UIView!
     
-    let wellnessLevel = 0;
+    var wellnessLevel = 0;
 
     
 }
