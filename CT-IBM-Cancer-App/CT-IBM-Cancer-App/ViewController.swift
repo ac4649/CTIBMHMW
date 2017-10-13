@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     // color selection
     //text colors
-    let selectedDayTextColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    let selectedDayTextColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     let currentMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
     let otherMonthTextColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     let wellnessGood = UIColor(red:0.0, green:1.0, blue:0.0, alpha:1.0)
     let wellnessMedium = UIColor(red:0.5, green:0.5, blue:0.0, alpha:1.0)
     let wellnessBad = UIColor(red:1.0, green:0.0, blue:0.0, alpha:1.0)
+    
+    let selectedDayBorderColor = UIColor(red:0.0, green:1.0, blue:1.0, alpha:1.0)
+    let transparentColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.0)
     
     
     let formatter = DateFormatter()
@@ -102,11 +105,15 @@ class ViewController: UIViewController {
         
         if cellState.isSelected {
             //cell is currently selected so show it
-            goodCell.selectedView.isHidden = true
+//            print("Setting the selectedView properties")
+            goodCell.selectedView.isHidden = false
+            goodCell.selectedView.layer.borderColor = selectedDayBorderColor.cgColor
+            goodCell.selectedView.layer.borderWidth = 5.0
+            goodCell.selectedView.layer.backgroundColor = transparentColor.cgColor
         }
         else {
             //not selected so hide it.
-            goodCell.selectedView.isHidden = false
+            goodCell.selectedView.isHidden = true
         }
         
     }
