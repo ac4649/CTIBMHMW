@@ -16,16 +16,15 @@ class ViewController: UIViewController {
     
     // color selection
     //text colors
-    let selectedDayTextColor = UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0)
-    let currentMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 255.0, alpha: 1.0)
-    let otherMonthTextColor = UIColor(red: 0.0, green: 100.0, blue: 100.0, alpha: 1.0)
+    let selectedDayTextColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    let currentMonthTextColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+    let otherMonthTextColor = UIColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
     //view colors
-    let calendarBackground = UIColor(red:0.0, green:255.0, blue:0.0, alpha:1.0)
-    let wellnessGood = UIColor(red:0.0, green:255.0, blue:0.0, alpha:1.0)
-    let wellnessMedium = UIColor(red:100.0, green:100.0, blue:0.0, alpha:1.0)
-    let wellnessBad = UIColor(red:255.0, green:0.0, blue:0.0, alpha:1.0)
-    
+    let calendarBackground = UIColor(red:0.30, green:0.30, blue:0.30, alpha:1.0)
+    let wellnessGood = UIColor(red:0.0, green:1.0, blue:0.0, alpha:1.0)
+    let wellnessMedium = UIColor(red:0.5, green:0.5, blue:0.0, alpha:1.0)
+    let wellnessBad = UIColor(red:1.0, green:0.0, blue:0.0, alpha:1.0)
     
     
     let formatter = DateFormatter()
@@ -38,7 +37,6 @@ class ViewController: UIViewController {
         calView.minimumLineSpacing = 0
         calView.minimumInteritemSpacing = 0
         calView.backgroundColor = calendarBackground
-        
 
     }
     
@@ -104,11 +102,11 @@ class ViewController: UIViewController {
         
         if cellState.isSelected {
             //cell is currently selected so show it
-            goodCell.selectedView.isHidden = false
+            goodCell.selectedView.isHidden = true
         }
         else {
             //not selected so hide it.
-            goodCell.selectedView.isHidden = true
+            goodCell.selectedView.isHidden = false
         }
         
     }

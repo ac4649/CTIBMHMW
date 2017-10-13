@@ -37,19 +37,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fp-8d-RKD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="12"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="12" id="dua-qV-fNQ"/>
-                                                    </constraints>
-                                                </view>
-                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQQ-2M-eZm">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQQ-2M-eZm">
                                                     <rect key="frame" x="21" y="20" width="33" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="5ZG-8d-K2D"/>
                                                         <constraint firstAttribute="width" constant="33" id="WaR-aj-SCf"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEu-h0-PH5">
+                                                    <rect key="frame" x="21" y="20" width="33" height="33"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="D1C-Na-9Dr"/>
+                                                        <constraint firstAttribute="width" constant="33" id="MVZ-hX-x6P"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -66,18 +72,17 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="5Fp-8d-RKD" firstAttribute="leading" secondItem="IF2-Ze-yy7" secondAttribute="leading" id="FYq-16-S0J"/>
-                                            <constraint firstAttribute="trailing" secondItem="5Fp-8d-RKD" secondAttribute="trailing" id="K2U-aH-RCP"/>
+                                            <constraint firstItem="sEu-h0-PH5" firstAttribute="centerY" secondItem="IF2-Ze-yy7" secondAttribute="centerY" id="Bhw-Bk-xrs"/>
                                             <constraint firstItem="HzA-y9-M7q" firstAttribute="centerX" secondItem="IF2-Ze-yy7" secondAttribute="centerX" id="NEn-Bh-J42"/>
                                             <constraint firstItem="HzA-y9-M7q" firstAttribute="centerY" secondItem="IF2-Ze-yy7" secondAttribute="centerY" id="NhT-7F-Rbl"/>
-                                            <constraint firstItem="5Fp-8d-RKD" firstAttribute="top" secondItem="IF2-Ze-yy7" secondAttribute="top" id="RVL-dq-d1b"/>
                                             <constraint firstItem="kQQ-2M-eZm" firstAttribute="centerX" secondItem="IF2-Ze-yy7" secondAttribute="centerX" id="ey8-J7-H5Y"/>
+                                            <constraint firstItem="sEu-h0-PH5" firstAttribute="centerX" secondItem="IF2-Ze-yy7" secondAttribute="centerX" id="gnx-vA-vfR"/>
                                             <constraint firstItem="kQQ-2M-eZm" firstAttribute="centerY" secondItem="IF2-Ze-yy7" secondAttribute="centerY" id="mdX-k7-dDW"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dataLabel" destination="HzA-y9-M7q" id="dbg-Xo-xs7"/>
                                             <outlet property="selectedView" destination="kQQ-2M-eZm" id="FJX-fe-8Yl"/>
-                                            <outlet property="wellnessLevelView" destination="5Fp-8d-RKD" id="SQz-0u-bQs"/>
+                                            <outlet property="wellnessLevelView" destination="sEu-h0-PH5" id="nk1-G0-mkr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
