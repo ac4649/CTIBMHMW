@@ -22,7 +22,16 @@ class ViewController: UIViewController {
     
     @IBAction func toggleDayJournal(_ sender: UISegmentedControl) {
    
-        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1{
+            // day view
+            dayStackView.isHidden = false
+            journalStackView.isHidden = true
+        }
+        else {
+            //journal view
+            dayStackView.isHidden = true
+            journalStackView.isHidden = false
+        }
         
     }
     //Fake data
@@ -30,6 +39,8 @@ class ViewController: UIViewController {
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
     let wellnessData = [1,1,1,4,4,4,7,7,7,5,5,5,5,2,2,2,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,1,1,1,1].reversed()
     var wellnessLevels = [Int](repeating:0, count:42)
+    
+    let dayMedication = ["Docorubicin", "Taxol", "Zofran"]
     
     // color selection
     //text colors
@@ -56,6 +67,19 @@ class ViewController: UIViewController {
         prepareData()
         prepareDayTitleLabel()
         prepareDayView()
+        
+        
+        
+        if journalDayViewToggle.selectedSegmentIndex == 1{
+            // day view
+            dayStackView.isHidden = false
+            journalStackView.isHidden = true
+        } else {
+            //journal view
+            dayStackView.isHidden = true
+            journalStackView.isHidden = false
+        }
+        
         //remove the cell-spacing
         calView.minimumLineSpacing = 0
         calView.minimumInteritemSpacing = 0
@@ -179,11 +203,22 @@ class ViewController: UIViewController {
         // add a meds list
         var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
         mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
-        mylabel.textAlignment = .center
-        mylabel.text = "medslist"
+        mylabel.textAlignment = .left
+        mylabel.text = "Today's Meds:"
         mylabel.backgroundColor = .white
         
         dayStackView.addSubview(mylabel)
+        
+        for curText in dayMedication{
+            var newLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
+            newLabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
+            newLabel.textAlignment = .center
+            newLabel.text = curText
+            newLabel.backgroundColor = .white
+            dayStackView.addSubview(newLabel)
+
+        }
+        
 
         self.dayView.addSubview(dayStackView)
         
