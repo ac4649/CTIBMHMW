@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var calView: JTAppleCalendarView!
     @IBOutlet weak var dayView: UIView!
@@ -39,9 +39,10 @@ class ViewController: UIViewController {
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
     let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7].reversed()
     var wellnessLevels = [Int](repeating:0, count:42)
+    let journalEntryTitles = ["Hours of Sleep", "Temperature", "Nausea Level", "Other Side Effects"]
     
-    let dayMedication = ["Docorubicin", "Taxol", "Zofran"]
-    let medDosage = ["1 - lunch","1 - Diner", "1 - Morning"]
+    let dayMedication = ["Doxorubicin", "Taxol", "Zofran"]
+    let medDosage = ["1 - Breakfast","1 - Lunch", "1 - Dinner"]
     
     // color selection
     //text colors
@@ -68,6 +69,7 @@ class ViewController: UIViewController {
         prepareData()
         prepareDayTitleLabel()
         prepareDayView()
+        prepareJournalView()
         
         
         
@@ -204,8 +206,10 @@ class ViewController: UIViewController {
         // add a meds list
         var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
         mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
-        mylabel.textAlignment = .left
-        mylabel.text = "Today's Meds:"
+        mylabel.textAlignment = .center
+        mylabel.text = "TODAY'S MEDICATIONS"
+        mylabel.attributedText = NSAttributedString(string: mylabel.text!, attributes:
+            [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
         mylabel.backgroundColor = .white
         
         dayStackView.addSubview(mylabel)
@@ -219,8 +223,8 @@ class ViewController: UIViewController {
             curVertStack.axis = .vertical
             
             var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4, y:0.0)
-            nameLabel.textAlignment = .center
+            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4 - 20, y:0.0)
+            nameLabel.textAlignment = .right
             nameLabel.text = curText
             nameLabel.backgroundColor = .white
             
@@ -228,7 +232,7 @@ class ViewController: UIViewController {
             
             var dosageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
             dosageLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:0.0)
-            dosageLabel.textAlignment = .center
+            dosageLabel.textAlignment = .left
             dosageLabel.text = medDosage[dosageIndex]
             dosageLabel.backgroundColor = .white
             
@@ -255,7 +259,63 @@ class ViewController: UIViewController {
     }
     
     func prepareJournalView() {
-        //
+        //create the stack view
+        journalStackView.frame = CGRect(x: 0.0, y: dayViewTitle.frame.size.height, width: self.dayView.frame.size.width, height: 200)
+        journalStackView.distribution = .equalSpacing
+        journalStackView.alignment = .fill
+        journalStackView.axis = .horizontal
+        journalStackView.backgroundColor = .red
+        
+        // add the Journal Title
+        var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.journalStackView.frame.size.width, height: 30))
+        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
+        mylabel.textAlignment = .center
+        mylabel.text = "TODAY'S JOURNAL"
+        mylabel.attributedText = NSAttributedString(string: mylabel.text!, attributes:
+            [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
+        mylabel.backgroundColor = .white
+        journalStackView.addSubview(mylabel)
+        
+        
+        //add text fields
+        
+//        var myTextView = UITextView(frame: CGRect(x: 0, y: 30, width: self.dayStackView.frame.size.width, height: 150))
+//        myTextView.delegate = self
+//        journalStackView.addSubview(myTextView)
+        // journalEntryTitles
+        
+        
+        var i:Float = 1
+        
+        for curText in journalEntryTitles{
+            var journalVertStack = UIStackView(frame: CGRect(x: 0, y: (CGFloat(30/2 + 30*i)), width: self.dayStackView.frame.size.width, height: 30))
+            
+            var newLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2 - 20, height: 30))
+            newLabel.center = CGPoint(x: self.dayView.frame.size.width/4, y:0)
+            newLabel.textAlignment = .right
+            newLabel.text = curText
+            newLabel.backgroundColor = .white
+            
+            
+            journalVertStack.addSubview(newLabel)
+            
+            var newTextField = UITextView(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
+            newTextField.center = CGPoint(x: 3*self.dayView.frame.size.width/4, y:0)
+            newTextField.textAlignment = .left
+            newTextField.text = "Enter Text Here"
+            newTextField.backgroundColor = .white
+            journalVertStack.addSubview(newTextField)
+
+            
+            journalStackView.addSubview(journalVertStack)
+
+            i = i+1
+        }
+        
+        
+        
+        self.dayView.addSubview(journalStackView)
+        
         
     }
 }
