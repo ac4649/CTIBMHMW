@@ -66,6 +66,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="dataLabel" destination="HzA-y9-M7q" id="dbg-Xo-xs7"/>
+                                            <outlet property="selectedView" destination="kQQ-2M-eZm" id="FJX-fe-8Yl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -136,6 +137,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="calView" destination="MJu-gd-5m6" id="Rdw-CU-Jg3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
