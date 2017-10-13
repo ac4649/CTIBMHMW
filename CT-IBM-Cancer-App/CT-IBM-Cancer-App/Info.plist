@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Allow voice recordings to be sent to Apple Servers for Speech-To-Text </string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow microphone inputs </string>
 </dict>
 </plist>

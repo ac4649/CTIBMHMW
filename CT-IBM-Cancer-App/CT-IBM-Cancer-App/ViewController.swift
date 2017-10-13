@@ -13,10 +13,18 @@ import JTAppleCalendar
 class ViewController: UIViewController {
     
     @IBOutlet weak var calView: JTAppleCalendarView!
-//    @IBOutlet weak var dayView: UIView
-    @IBOutlet weak var dayViewTitle:UILabel!
+    @IBOutlet weak var dayView: UIView!
+    var dayViewTitle:UILabel!
+    var journalStackView: UIStackView = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 200))
+    var dayStackView: UIStackView = UIStackView(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 200))
     
+    @IBOutlet weak var journalDayViewToggle: UISegmentedControl!
     
+    @IBAction func toggleDayJournal(_ sender: UISegmentedControl) {
+   
+        print(sender.selectedSegmentIndex)
+        
+    }
     //Fake data
     let numDataPoints = 42
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
@@ -46,7 +54,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         prepareData()
-        
+        prepareDayView()
         //remove the cell-spacing
         calView.minimumLineSpacing = 0
         calView.minimumInteritemSpacing = 0
@@ -145,7 +153,7 @@ class ViewController: UIViewController {
             goodCell.selectedView.layer.borderWidth = 5.0
             goodCell.selectedView.layer.backgroundColor = transparentColor.cgColor
             
-            setDayViewTitle(newTitle: cellState.date.description)
+            setDayViewTitle(newTitle: formatter.string(from: cellState.date))
             
         }
         else {
@@ -160,13 +168,35 @@ class ViewController: UIViewController {
     
     func prepareDayView() {
         
+        dayStackView.frame = CGRect(x: 0.0, y: dayViewTitle.frame.height, width: self.dayView.frame.size.width, height: 200)
+
+        
+        // add a meds list
+        var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayView.frame.size.width, height: 21))
+        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:21/2)
+        mylabel.textAlignment = .center
+        mylabel.text = "medslist"
+        mylabel.backgroundColor = .white
+        
+        
+
+        
+        
+        dayStackView.distribution = .equalSpacing
+        dayStackView.axis = .horizontal
+        dayStackView.addSubview(mylabel)
+        self.dayView.addSubview(dayStackView)
+        
     }
     
     func setDayViewTitle(newTitle: String) {
         dayViewTitle.text = newTitle
         
     }
-
+    
+    func prepareJournalView() {
+        //
+    }
 }
 
 

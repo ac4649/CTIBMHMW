@@ -147,30 +147,27 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KE-RI-SUZ">
-                                <rect key="frame" x="0.0" y="393" width="375" height="274"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sov-wk-FDc">
-                                        <rect key="frame" x="8" y="8" width="359" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="KfO-jk-mJy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="393" width="375" height="235"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Sov-wk-FDc" secondAttribute="trailing" constant="8" id="hgv-cl-uHU"/>
-                                    <constraint firstAttribute="height" constant="274" id="mka-u5-Bzb"/>
-                                    <constraint firstItem="Sov-wk-FDc" firstAttribute="top" secondItem="5KE-RI-SUZ" secondAttribute="top" constant="8" id="x7f-nA-TUD"/>
-                                    <constraint firstItem="Sov-wk-FDc" firstAttribute="leading" secondItem="5KE-RI-SUZ" secondAttribute="leading" constant="8" id="xRO-wC-DLM"/>
+                                    <constraint firstAttribute="height" constant="235" id="mka-u5-Bzb"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tct-uV-BU0">
+                                <rect key="frame" x="120" y="636" width="135" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Journal"/>
+                                    <segment title="DayView"/>
+                                </segments>
+                                <connections>
+                                    <action selector="toggleDayJournal:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xql-gk-OvQ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5KE-RI-SUZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Na6-9A-jJ0"/>
+                            <constraint firstItem="5KE-RI-SUZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-39" id="Na6-9A-jJ0"/>
                             <constraint firstItem="MJu-gd-5m6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="53" id="P16-hV-9W1"/>
                             <constraint firstItem="MJu-gd-5m6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VkS-A1-Jy5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yi9-fM-kJi" secondAttribute="trailing" id="cl8-ws-UFa"/>
@@ -184,7 +181,8 @@
                     </view>
                     <connections>
                         <outlet property="calView" destination="MJu-gd-5m6" id="Rdw-CU-Jg3"/>
-                        <outlet property="dayViewTitle" destination="Sov-wk-FDc" id="MfL-Ih-s1e"/>
+                        <outlet property="dayView" destination="5KE-RI-SUZ" id="won-73-dMk"/>
+                        <outlet property="journalDayViewToggle" destination="Tct-uV-BU0" id="Zer-f1-ir6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
