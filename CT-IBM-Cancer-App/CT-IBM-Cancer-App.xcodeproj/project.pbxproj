@@ -7,19 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DC751951F900CAB00FE0131 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751941F900CAB00FE0131 /* AppDelegate.swift */; };
+		4DC751971F900CAB00FE0131 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751961F900CAB00FE0131 /* ViewController.swift */; };
+		4DC7519A1F900CAB00FE0131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC751981F900CAB00FE0131 /* Main.storyboard */; };
 		4DC7519C1F900CAB00FE0131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7519B1F900CAB00FE0131 /* Assets.xcassets */; };
+		4DC7519F1F900CAB00FE0131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */; };
 		4DC751AA1F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751A91F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift */; };
 		4DC751B51F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */; };
-		69081E1E1FBF4B9E0084A1E6 /* TreatmentQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69081E1D1FBF4B9E0084A1E6 /* TreatmentQuestionTableViewCell.swift */; };
-		69FE3E9E1FBE9860009FB1AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69FE3E931FBE985C009FB1AD /* LaunchScreen.storyboard */; };
-		69FE3E9F1FBE9860009FB1AD /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE3E941FBE985C009FB1AD /* CustomCell.swift */; };
-		69FE3EA01FBE9860009FB1AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69FE3E951FBE985D009FB1AD /* Assets.xcassets */; };
-		69FE3EA31FBE9860009FB1AD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69FE3E981FBE985E009FB1AD /* Info.plist */; };
-		69FE3EA41FBE9860009FB1AD /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE3E991FBE985E009FB1AD /* WizardViewController.swift */; };
-		69FE3EA61FBE9860009FB1AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69FE3E9B1FBE985F009FB1AD /* Main.storyboard */; };
-		69FE3EA71FBE9860009FB1AD /* UIVIEWCONER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE3E9C1FBE985F009FB1AD /* UIVIEWCONER.swift */; };
-		69FE3EA81FBE9860009FB1AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE3E9D1FBE9860009FB1AD /* ViewController.swift */; };
-		69FE3EB21FBE9A51009FB1AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE3EB11FBE9A51009FB1AD /* AppDelegate.swift */; };
+		4DC751C31F901DA600FE0131 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC751C21F901DA600FE0131 /* CustomCell.swift */; };
+		663E8F281FBE78E1008F73DE /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F1C1FBE78D8008F73DE /* Roboto-BlackItalic.ttf */; };
+		663E8F291FBE78E1008F73DE /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F1D1FBE78D9008F73DE /* Roboto-Black.ttf */; };
+		663E8F2A1FBE78E1008F73DE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F1E1FBE78DA008F73DE /* Roboto-Medium.ttf */; };
+		663E8F2B1FBE78E1008F73DE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F1F1FBE78DB008F73DE /* Roboto-Regular.ttf */; };
+		663E8F2C1FBE78E1008F73DE /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F201FBE78DB008F73DE /* Roboto-BoldItalic.ttf */; };
+		663E8F2D1FBE78E1008F73DE /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F211FBE78DC008F73DE /* Roboto-LightItalic.ttf */; };
+		663E8F2E1FBE78E1008F73DE /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F221FBE78DD008F73DE /* Roboto-Light.ttf */; };
+		663E8F2F1FBE78E1008F73DE /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F231FBE78DD008F73DE /* Roboto-ThinItalic.ttf */; };
+		663E8F301FBE78E1008F73DE /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F241FBE78DE008F73DE /* Roboto-MediumItalic.ttf */; };
+		663E8F311FBE78E1008F73DE /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F251FBE78DF008F73DE /* Roboto-Italic.ttf */; };
+		663E8F321FBE78E1008F73DE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F261FBE78E0008F73DE /* Roboto-Bold.ttf */; };
+		663E8F331FBE78E1008F73DE /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F271FBE78E0008F73DE /* Roboto-Thin.ttf */; };
+		663E8F351FBE7BE0008F73DE /* right-arrow copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F341FBE7BE0008F73DE /* right-arrow copy.png */; };
+		663E8F371FBE7CD6008F73DE /* plussign.png in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F361FBE7CD6008F73DE /* plussign.png */; };
+		663E8F731FBF5663008F73DE /* whitearrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F721FBF5663008F73DE /* whitearrow-up.png */; };
+		663E8F751FBF654E008F73DE /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 663E8F741FBF654E008F73DE /* stripes.png */; };
+		69081E291FBF7B010084A1E6 /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69081E271FBF7B000084A1E6 /* WizardViewController.swift */; };
+		69081E2A1FBF7B010084A1E6 /* TreatmentQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69081E281FBF7B010084A1E6 /* TreatmentQuestionTableViewCell.swift */; };
 		9A2EAA224F0D5E0490671D12 /* Pods_CT_IBM_Cancer_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7DE85D1CA6431CF86B1922 /* Pods_CT_IBM_Cancer_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +56,11 @@
 /* Begin PBXFileReference section */
 		1E7DE85D1CA6431CF86B1922 /* Pods_CT_IBM_Cancer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CT_IBM_Cancer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC751911F900CAB00FE0131 /* CT-IBM-Cancer-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CT-IBM-Cancer-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DC751941F900CAB00FE0131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4DC751961F900CAB00FE0131 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DC751991F900CAB00FE0131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DC7519B1F900CAB00FE0131 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DC7519E1F900CAB00FE0131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DC751A01F900CAB00FE0131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC751A51F900CAB00FE0131 /* CT-IBM-Cancer-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CT-IBM-Cancer-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC751A91F900CAB00FE0131 /* CT_IBM_Cancer_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CT_IBM_Cancer_AppTests.swift; sourceTree = "<group>"; };
@@ -51,17 +68,26 @@
 		4DC751B01F900CAB00FE0131 /* CT-IBM-Cancer-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CT-IBM-Cancer-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC751B41F900CAB00FE0131 /* CT_IBM_Cancer_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CT_IBM_Cancer_AppUITests.swift; sourceTree = "<group>"; };
 		4DC751B61F900CAB00FE0131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DC751C21F901DA600FE0131 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		4EEF314D6512FA723C1EE20C /* Pods-CT-IBM-Cancer-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT-IBM-Cancer-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App.debug.xcconfig"; sourceTree = "<group>"; };
-		69081E1D1FBF4B9E0084A1E6 /* TreatmentQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentQuestionTableViewCell.swift; sourceTree = "<group>"; };
-		69FE3E931FBE985C009FB1AD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		69FE3E941FBE985C009FB1AD /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		69FE3E951FBE985D009FB1AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		69FE3E981FBE985E009FB1AD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69FE3E991FBE985E009FB1AD /* WizardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WizardViewController.swift; sourceTree = "<group>"; };
-		69FE3E9B1FBE985F009FB1AD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		69FE3E9C1FBE985F009FB1AD /* UIVIEWCONER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIEWCONER.swift; sourceTree = "<group>"; };
-		69FE3E9D1FBE9860009FB1AD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		69FE3EB11FBE9A51009FB1AD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		663E8F1C1FBE78D8008F73DE /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		663E8F1D1FBE78D9008F73DE /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		663E8F1E1FBE78DA008F73DE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		663E8F1F1FBE78DB008F73DE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		663E8F201FBE78DB008F73DE /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		663E8F211FBE78DC008F73DE /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		663E8F221FBE78DD008F73DE /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		663E8F231FBE78DD008F73DE /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		663E8F241FBE78DE008F73DE /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		663E8F251FBE78DF008F73DE /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		663E8F261FBE78E0008F73DE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		663E8F271FBE78E0008F73DE /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		663E8F341FBE7BE0008F73DE /* right-arrow copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow copy.png"; sourceTree = "<group>"; };
+		663E8F361FBE7CD6008F73DE /* plussign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plussign.png; sourceTree = "<group>"; };
+		663E8F721FBF5663008F73DE /* whitearrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitearrow-up.png"; sourceTree = "<group>"; };
+		663E8F741FBF654E008F73DE /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
+		69081E271FBF7B000084A1E6 /* WizardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WizardViewController.swift; sourceTree = "<group>"; };
+		69081E281FBF7B010084A1E6 /* TreatmentQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		72390E7F9FDBBB83AB7022E6 /* Pods-CT-IBM-Cancer-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT-IBM-Cancer-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-CT-IBM-Cancer-App/Pods-CT-IBM-Cancer-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,18 +142,31 @@
 		4DC751931F900CAB00FE0131 /* CT-IBM-Cancer-App */ = {
 			isa = PBXGroup;
 			children = (
-				69FE3E951FBE985D009FB1AD /* Assets.xcassets */,
-				69081E1D1FBF4B9E0084A1E6 /* TreatmentQuestionTableViewCell.swift */,
-				69FE3EB11FBE9A51009FB1AD /* AppDelegate.swift */,
-				69FE3E941FBE985C009FB1AD /* CustomCell.swift */,
-				69FE3E981FBE985E009FB1AD /* Info.plist */,
-				69FE3E931FBE985C009FB1AD /* LaunchScreen.storyboard */,
-				69FE3E9B1FBE985F009FB1AD /* Main.storyboard */,
-				69FE3E9C1FBE985F009FB1AD /* UIVIEWCONER.swift */,
-				69FE3E9D1FBE9860009FB1AD /* ViewController.swift */,
-				69FE3E991FBE985E009FB1AD /* WizardViewController.swift */,
+				69081E271FBF7B000084A1E6 /* WizardViewController.swift */,
+				69081E281FBF7B010084A1E6 /* TreatmentQuestionTableViewCell.swift */,
+				4DC751941F900CAB00FE0131 /* AppDelegate.swift */,
+				4DC751961F900CAB00FE0131 /* ViewController.swift */,
+				663E8F721FBF5663008F73DE /* whitearrow-up.png */,
+				4DC751981F900CAB00FE0131 /* Main.storyboard */,
+				663E8F341FBE7BE0008F73DE /* right-arrow copy.png */,
+				663E8F1D1FBE78D9008F73DE /* Roboto-Black.ttf */,
+				663E8F1C1FBE78D8008F73DE /* Roboto-BlackItalic.ttf */,
+				663E8F261FBE78E0008F73DE /* Roboto-Bold.ttf */,
+				663E8F201FBE78DB008F73DE /* Roboto-BoldItalic.ttf */,
+				663E8F251FBE78DF008F73DE /* Roboto-Italic.ttf */,
+				663E8F221FBE78DD008F73DE /* Roboto-Light.ttf */,
+				663E8F211FBE78DC008F73DE /* Roboto-LightItalic.ttf */,
+				663E8F1E1FBE78DA008F73DE /* Roboto-Medium.ttf */,
+				663E8F241FBE78DE008F73DE /* Roboto-MediumItalic.ttf */,
+				663E8F1F1FBE78DB008F73DE /* Roboto-Regular.ttf */,
+				663E8F271FBE78E0008F73DE /* Roboto-Thin.ttf */,
+				663E8F231FBE78DD008F73DE /* Roboto-ThinItalic.ttf */,
+				663E8F361FBE7CD6008F73DE /* plussign.png */,
+				663E8F741FBF654E008F73DE /* stripes.png */,
 				4DC7519B1F900CAB00FE0131 /* Assets.xcassets */,
+				4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */,
 				4DC751A01F900CAB00FE0131 /* Info.plist */,
+				4DC751C21F901DA600FE0131 /* CustomCell.swift */,
 			);
 			path = "CT-IBM-Cancer-App";
 			sourceTree = "<group>";
@@ -277,11 +316,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69FE3EA31FBE9860009FB1AD /* Info.plist in Resources */,
+				663E8F331FBE78E1008F73DE /* Roboto-Thin.ttf in Resources */,
+				663E8F2F1FBE78E1008F73DE /* Roboto-ThinItalic.ttf in Resources */,
+				663E8F2C1FBE78E1008F73DE /* Roboto-BoldItalic.ttf in Resources */,
+				663E8F321FBE78E1008F73DE /* Roboto-Bold.ttf in Resources */,
+				663E8F301FBE78E1008F73DE /* Roboto-MediumItalic.ttf in Resources */,
+				663E8F731FBF5663008F73DE /* whitearrow-up.png in Resources */,
+				4DC7519F1F900CAB00FE0131 /* LaunchScreen.storyboard in Resources */,
+				663E8F2D1FBE78E1008F73DE /* Roboto-LightItalic.ttf in Resources */,
+				663E8F2E1FBE78E1008F73DE /* Roboto-Light.ttf in Resources */,
+				663E8F371FBE7CD6008F73DE /* plussign.png in Resources */,
 				4DC7519C1F900CAB00FE0131 /* Assets.xcassets in Resources */,
-				69FE3E9E1FBE9860009FB1AD /* LaunchScreen.storyboard in Resources */,
-				69FE3EA61FBE9860009FB1AD /* Main.storyboard in Resources */,
-				69FE3EA01FBE9860009FB1AD /* Assets.xcassets in Resources */,
+				663E8F2B1FBE78E1008F73DE /* Roboto-Regular.ttf in Resources */,
+				663E8F281FBE78E1008F73DE /* Roboto-BlackItalic.ttf in Resources */,
+				663E8F2A1FBE78E1008F73DE /* Roboto-Medium.ttf in Resources */,
+				4DC7519A1F900CAB00FE0131 /* Main.storyboard in Resources */,
+				663E8F311FBE78E1008F73DE /* Roboto-Italic.ttf in Resources */,
+				663E8F751FBF654E008F73DE /* stripes.png in Resources */,
+				663E8F351FBE7BE0008F73DE /* right-arrow copy.png in Resources */,
+				663E8F291FBE78E1008F73DE /* Roboto-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,12 +413,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69FE3EB21FBE9A51009FB1AD /* AppDelegate.swift in Sources */,
-				69FE3EA81FBE9860009FB1AD /* ViewController.swift in Sources */,
-				69081E1E1FBF4B9E0084A1E6 /* TreatmentQuestionTableViewCell.swift in Sources */,
-				69FE3E9F1FBE9860009FB1AD /* CustomCell.swift in Sources */,
-				69FE3EA41FBE9860009FB1AD /* WizardViewController.swift in Sources */,
-				69FE3EA71FBE9860009FB1AD /* UIVIEWCONER.swift in Sources */,
+				4DC751971F900CAB00FE0131 /* ViewController.swift in Sources */,
+				69081E291FBF7B010084A1E6 /* WizardViewController.swift in Sources */,
+				4DC751C31F901DA600FE0131 /* CustomCell.swift in Sources */,
+				4DC751951F900CAB00FE0131 /* AppDelegate.swift in Sources */,
+				69081E2A1FBF7B010084A1E6 /* TreatmentQuestionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +451,25 @@
 			targetProxy = 4DC751B11F900CAB00FE0131 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4DC751981F900CAB00FE0131 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DC751991F900CAB00FE0131 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4DC7519D1F900CAB00FE0131 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DC7519E1F900CAB00FE0131 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4DC751B71F900CAB00FE0131 /* Debug */ = {
@@ -516,8 +587,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D89RJC2KAA;
 				INFOPLIST_FILE = "CT-IBM-Cancer-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App-Derek316x";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App-dzyzz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,8 +604,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D89RJC2KAA;
 				INFOPLIST_FILE = "CT-IBM-Cancer-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App-Derek316x";
+				PRODUCT_BUNDLE_IDENTIFIER = "CT-IBM.CT-IBM-Cancer-App-dzyzz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

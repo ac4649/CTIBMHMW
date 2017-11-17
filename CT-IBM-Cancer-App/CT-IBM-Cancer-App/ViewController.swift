@@ -10,18 +10,23 @@ import UIKit
 import JTAppleCalendar
 
 
-class ViewController: UIViewController, UITextViewDelegate {
-    
+class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
+
     @IBOutlet weak var calView: JTAppleCalendarView!
     @IBOutlet weak var dayView: UIView!
+    @IBOutlet weak var monthLabel: UILabel!
     var dayViewTitle:UILabel = UILabel()
     var journalStackView: UIStackView = UIStackView()
     var dayStackView: UIStackView = UIStackView()
     
+    @IBOutlet weak var dailyDetailsView: UIView!
+    @IBOutlet weak var scroller: UIScrollView!
     @IBOutlet weak var journalDayViewToggle: UISegmentedControl!
-    
+    @IBAction func showDailyDetails(_ sender: UIButton) {
+        dailyDetailsView.isHidden = !dailyDetailsView.isHidden
+        print("BUTTON IS PRESSED!")
+    }
     @IBAction func toggleDayJournal(_ sender: UISegmentedControl) {
-   
         if sender.selectedSegmentIndex == 1{
             // day view
             dayStackView.isHidden = false
@@ -32,8 +37,8 @@ class ViewController: UIViewController, UITextViewDelegate {
             dayStackView.isHidden = true
             journalStackView.isHidden = false
         }
-        
     }
+
     //Fake data
     let numDataPoints = 42
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
@@ -41,8 +46,8 @@ class ViewController: UIViewController, UITextViewDelegate {
     var wellnessLevels = [Int](repeating:0, count:42)
     let journalEntryTitles = ["Hours of Sleep", "Temperature", "Nausea Level", "Other Side Effects"]
     
-    let dayMedication = ["Doxorubicin", "Taxol", "Zofran"]
-    let medDosage = ["1 - Breakfast","1 - Lunch", "1 - Dinner"]
+    let dayMedication = ["Neupogen", "Zofran"]
+    let medDosage = ["9:30 AM", "12:00 PM"]
     
     // color selection
     //text colors
@@ -54,7 +59,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     let calendarBackground = UIColor(red: 1, green: 1, blue: 1, alpha:1.0)
     let wellnessGood = UIColor(red:0.463, green:0.69, blue:0.25, alpha:1.0)
     let wellnessMedium = UIColor(red:1.0, green:0.79, blue:0.078, alpha:1.0)
-    let wellnessBad = UIColor(red:0.89, green:0.34, blue:0.18, alpha:1.0)
+    let wellnessBad = UIColor(red:221.0/255.0, green:76.0/255.0, blue:57.0/255.0, alpha:1.0)
     
     let selectedDayBorderColor = UIColor(red:0.0, green:1.0, blue:1.0, alpha:1.0)
     let transparentColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.0)
@@ -70,7 +75,8 @@ class ViewController: UIViewController, UITextViewDelegate {
         prepareDayTitleLabel()
         prepareDayView()
         prepareJournalView()
-        
+        dailyDetailsView.isHidden = true
+        scroller.delegate = self
         
         
         if journalDayViewToggle.selectedSegmentIndex == 1{
@@ -88,6 +94,10 @@ class ViewController: UIViewController, UITextViewDelegate {
         calView.minimumInteritemSpacing = 0
         calView.backgroundColor = calendarBackground
 
+        calView.visibleDates { visibleDates in
+            self.setupViewsOfCalendar(from: visibleDates)
+            
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -126,7 +136,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     func updateWellness(cell: CustomCell?){
-        guard let goodCell = cell as? CustomCell else {return}
+        guard let goodCell = cell else {return}
         print("wellness level = ")
         print(goodCell.wellnessLevel)
         if (goodCell.wellnessLevel == 0){
@@ -180,8 +190,9 @@ class ViewController: UIViewController, UITextViewDelegate {
             goodCell.selectedView.layer.borderColor = selectedDayBorderColor.cgColor
             goodCell.selectedView.layer.borderWidth = 5.0
             goodCell.selectedView.layer.backgroundColor = transparentColor.cgColor
-            
-            setDayViewTitle(newTitle: formatter.string(from: cellState.date))
+            formatter.dateFormat = "MMMM dd"
+            let tt = formatter.string(from: cellState.date)
+            setDayViewTitle(newTitle: tt) //formatter.string(from: cellState.date))
             
         }
         else {
@@ -191,6 +202,11 @@ class ViewController: UIViewController, UITextViewDelegate {
         
     }
 
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo){
+        let date = visibleDates.monthDates.first!.date
+        formatter.dateFormat = "MMMM"
+        monthLabel.text = formatter.string(from: date)
+    }
     
     // DAY VIEW FUNCTIONS
     
@@ -205,9 +221,10 @@ class ViewController: UIViewController, UITextViewDelegate {
 
         // add a meds list
         var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width, height: 30))
-        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
+        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:50/2)
         mylabel.textAlignment = .center
-        mylabel.text = "TODAY'S MEDICATIONS"
+        mylabel.text = "MEDICATIONS"
+        mylabel.font = UIFont(name: "Roboto", size: 18)
         mylabel.attributedText = NSAttributedString(string: mylabel.text!, attributes:
             [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
         mylabel.backgroundColor = .white
@@ -217,23 +234,25 @@ class ViewController: UIViewController, UITextViewDelegate {
         var i:Float = 1
         var dosageIndex = 0
         for curText in dayMedication{
-            var curVertStack = UIStackView(frame: CGRect(x: 0, y: (CGFloat(30/2 + 30*i)), width: self.dayStackView.frame.size.width, height: 30))
+            var curVertStack = UIStackView(frame: CGRect(x: 0, y: (CGFloat(50/2 + 30*i)), width: self.dayStackView.frame.size.width, height: 30))
             curVertStack.distribution = .equalSpacing
             curVertStack.alignment = .fill
             curVertStack.axis = .vertical
             
             var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4 - 20, y:0.0)
-            nameLabel.textAlignment = .right
+            nameLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:0.0)
+            nameLabel.textAlignment = .left
             nameLabel.text = curText
+            nameLabel.font = UIFont(name: "Roboto", size: 18)
             nameLabel.backgroundColor = .white
             
             curVertStack.addSubview(nameLabel)
             
             var dosageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            dosageLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:0.0)
-            dosageLabel.textAlignment = .left
+            dosageLabel.center = CGPoint(x:self.dayView.frame.size.width/4 - 20, y:0.0)
+            dosageLabel.textAlignment = .right
             dosageLabel.text = medDosage[dosageIndex]
+            dosageLabel.font = UIFont(name: "Roboto", size: 18)
             dosageLabel.backgroundColor = .white
             
             curVertStack.addSubview(dosageLabel)
@@ -248,6 +267,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     func setDayViewTitle(newTitle: String) {
         dayViewTitle.text = newTitle
+        dayViewTitle.font = UIFont(name: "Roboto", size: 24)
         
     }
     func prepareDayTitleLabel() {
@@ -268,9 +288,9 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         // add the Journal Title
         var mylabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.journalStackView.frame.size.width, height: 30))
-        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:30/2)
+        mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:50/2)
         mylabel.textAlignment = .center
-        mylabel.text = "TODAY'S JOURNAL"
+        mylabel.text = "JOURNAL"
         mylabel.attributedText = NSAttributedString(string: mylabel.text!, attributes:
             [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
         mylabel.backgroundColor = .white
@@ -288,7 +308,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         var i:Float = 1
         
         for curText in journalEntryTitles{
-            var journalVertStack = UIStackView(frame: CGRect(x: 0, y: (CGFloat(30/2 + 30*i)), width: self.dayStackView.frame.size.width, height: 30))
+            var journalVertStack = UIStackView(frame: CGRect(x: 0, y: (CGFloat(50/2 + 30*i)), width: self.dayStackView.frame.size.width, height: 30))
             
             var newLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2 - 20, height: 30))
             newLabel.center = CGPoint(x: self.dayView.frame.size.width/4, y:0)
@@ -326,13 +346,13 @@ extension ViewController: JTAppleCalendarViewDataSource {
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         
-        formatter.dateFormat = "yyyy mm dd"
+        formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
         
-        let startDate = formatter.date(from: "2017 10 01")!
-        let endDate = formatter.date(from: "2017 10 31")!
+        let startDate = formatter.date(from: "2017 11 01")!
+        let endDate = formatter.date(from: "2017 11 30")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate )
         return parameters
@@ -366,6 +386,10 @@ extension ViewController: JTAppleCalendarViewDelegate {
         handleCellSelection(view:cell, cellState:cellState)
         handleCellTextColor(view:cell, cellState: cellState)
 
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setupViewsOfCalendar(from: visibleDates)
     }
     
 }
