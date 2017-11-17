@@ -43,6 +43,13 @@
 	</array>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Allow voice recordings to be sent to Apple Servers for Speech-To-Text </string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Black.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow microphone inputs </string>
 </dict>
