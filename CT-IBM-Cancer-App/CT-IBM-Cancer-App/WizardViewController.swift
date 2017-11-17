@@ -34,8 +34,8 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         pickerData = [Treatment.Surgery, Treatment.Chemotherapy, Treatment.RadiationTherapy]
         
         tableDataForTreatment[Treatment.Surgery] = ["How many days since the surgery?", "How many days did you spend in the hospital?", "How many hours do you spend in bed each day?"]
-        tableDataForTreatment[Treatment.Chemotherapy] = ["Chemo1?", "Chemo2?"]
-        tableDataForTreatment[Treatment.RadiationTherapy] = ["Rads1?", "Rads2", "Rads3", "Rads4"]
+        tableDataForTreatment[Treatment.Chemotherapy] = ["How many weeks per therapy round?", "How many rounds?", "How many weeks do you rest between rounds?", "How many days since you began your cycle?", "How many meals do you have each day?", "How many hours do you rest after a session?"]
+        tableDataForTreatment[Treatment.RadiationTherapy] = ["How many days per week do you get therapy?", "How long do you usually stay in bed after radiation?", "How many hours of sleep do you usually get?"]
         
     }
 
@@ -71,8 +71,12 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TreatmentCellIdentifier", for: indexPath)
-        cell.textLabel!.text = tableDataForTreatment[currentTreatment]![indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TreatmentCellIdentifier", for: indexPath) as? TreatmentQuestionTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+        
+        cell.questionLabel.text = tableDataForTreatment[currentTreatment]![indexPath.row]
+
         
         return cell
     }
