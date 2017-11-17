@@ -190,8 +190,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
             goodCell.selectedView.layer.borderColor = selectedDayBorderColor.cgColor
             goodCell.selectedView.layer.borderWidth = 5.0
             goodCell.selectedView.layer.backgroundColor = transparentColor.cgColor
-            
-            setDayViewTitle(newTitle: formatter.string(from: cellState.date))
+            formatter.dateFormat = "MMMM dd"
+            let tt = formatter.string(from: cellState.date)
+            setDayViewTitle(newTitle: tt) //formatter.string(from: cellState.date))
             
         }
         else {
@@ -223,6 +224,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         mylabel.center = CGPoint(x:self.dayView.frame.size.width/2, y:50/2)
         mylabel.textAlignment = .center
         mylabel.text = "MEDICATIONS"
+        mylabel.font = UIFont(name: "Roboto", size: 18)
         mylabel.attributedText = NSAttributedString(string: mylabel.text!, attributes:
             [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue])
         mylabel.backgroundColor = .white
@@ -238,17 +240,19 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
             curVertStack.axis = .vertical
             
             var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            nameLabel.center = CGPoint(x:self.dayView.frame.size.width/4 - 20, y:0.0)
-            nameLabel.textAlignment = .right
+            nameLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:0.0)
+            nameLabel.textAlignment = .left
             nameLabel.text = curText
+            nameLabel.font = UIFont(name: "Roboto", size: 18)
             nameLabel.backgroundColor = .white
             
             curVertStack.addSubview(nameLabel)
             
             var dosageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.dayStackView.frame.size.width/2, height: 30))
-            dosageLabel.center = CGPoint(x:3*self.dayView.frame.size.width/4, y:0.0)
-            dosageLabel.textAlignment = .left
+            dosageLabel.center = CGPoint(x:self.dayView.frame.size.width/4 - 20, y:0.0)
+            dosageLabel.textAlignment = .right
             dosageLabel.text = medDosage[dosageIndex]
+            dosageLabel.font = UIFont(name: "Roboto", size: 18)
             dosageLabel.backgroundColor = .white
             
             curVertStack.addSubview(dosageLabel)
@@ -263,6 +267,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     
     func setDayViewTitle(newTitle: String) {
         dayViewTitle.text = newTitle
+        dayViewTitle.font = UIFont(name: "Roboto", size: 24)
         
     }
     func prepareDayTitleLabel() {
