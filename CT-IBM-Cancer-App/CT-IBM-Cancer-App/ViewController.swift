@@ -39,11 +39,12 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         }
     }
 
-    //Fake data
-    let numDataPoints = 42
+    let numDataPoints = 100
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
-    let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7].reversed()
-    var wellnessLevels = [Int](repeating:0, count:42)
+    let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5].reversed()
+    
+    //Fake data
+    var wellnessLevels = [Int](repeating:0, count:100)
     let journalEntryTitles = ["Hours of Sleep", "Temperature", "Nausea Level", "Other Side Effects"]
     
     let dayMedication = ["Neupogen", "Zofran"]
@@ -352,7 +353,7 @@ extension ViewController: JTAppleCalendarViewDataSource {
         
         
         let startDate = formatter.date(from: "2017 11 01")!
-        let endDate = formatter.date(from: "2017 11 30")!
+        let endDate = formatter.date(from: "2017 12 30")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate )
         return parameters
