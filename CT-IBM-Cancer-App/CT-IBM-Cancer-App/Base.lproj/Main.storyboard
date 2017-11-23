@@ -89,7 +89,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="EVV-so-DjL" kind="show" id="Xeh-H5-SPp"/>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="4I2-Yy-hes"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="796-xc-ZWe">
@@ -294,7 +294,7 @@
                                         <rect key="frame" x="0.0" y="10" width="375" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usS-ET-S2o">
-                                                <rect key="frame" x="143.5" y="7" width="88" height="28"/>
+                                                <rect key="frame" x="144.5" y="6.5" width="86" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -494,6 +494,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="850"/>
                     <connections>
+                        <outlet property="DailyViewDate" destination="tKl-y0-51S" id="P9A-Kg-a7n"/>
+                        <outlet property="DailyViewMonth" destination="jeC-aT-fD9" id="65p-J1-syP"/>
                         <outlet property="calView" destination="MJu-gd-5m6" id="958-u9-yCp"/>
                         <outlet property="dailyDetailsView" destination="xpa-3t-9Zw" id="xM1-aE-i1U"/>
                         <outlet property="dayView" destination="5KE-RI-SUZ" id="won-73-dMk"/>
@@ -557,6 +559,9 @@
                                                         <integer key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="EVV-so-DjL" kind="show" id="wSB-JM-Aaj"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEy-X9-3aG">
                                                 <rect key="frame" x="13" y="170" width="275" height="30.000000000000028"/>
@@ -742,11 +747,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7d-Nb-g7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="165"/>
+            <point key="canvasLocation" x="-87" y="913"/>
         </scene>
     </scenes>
     <resources>
         <image name="plussign.png" width="455" height="455"/>
         <image name="stripes.png" width="305" height="110"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="U1Y-cc-vyP"/>
+    </inferredMetricsTieBreakers>
 </document>

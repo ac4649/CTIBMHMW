@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     @IBOutlet weak var calView: JTAppleCalendarView!
     @IBOutlet weak var dayView: UIView!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var DailyViewMonth: UILabel!
+    @IBOutlet weak var DailyViewDate: UILabel!
     var dayViewTitle:UILabel = UILabel()
     var journalStackView: UIStackView = UIStackView()
     var dayStackView: UIStackView = UIStackView()
@@ -41,12 +43,12 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
 
     let numDataPoints = 100
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
-    let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5].reversed()
+    let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2].reversed()
+    var wellnessLevels = [Int](repeating:0, count:100)
+    let currDate = Date()
     
     //Fake data
-    var wellnessLevels = [Int](repeating:0, count:100)
     let journalEntryTitles = ["Hours of Sleep", "Temperature", "Nausea Level", "Other Side Effects"]
-    
     let dayMedication = ["Neupogen", "Zofran"]
     let medDosage = ["9:30 AM", "12:00 PM"]
     
@@ -76,6 +78,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         prepareDayTitleLabel()
         prepareDayView()
         prepareJournalView()
+        setDailyViewLabels()
         dailyDetailsView.isHidden = true
         scroller.delegate = self
         
@@ -121,16 +124,18 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     
     func prepareData(){
         var index = 0
-        for curInt in wellnessData {
-            if curInt <= 3 && curInt >= 0{
-                wellnessLevels[index] = 0
-            }
-            else if curInt <= 6 && curInt > 3{
-                wellnessLevels[index] = 1
-            }
-            else {
-                wellnessLevels[index] = 2
-            }
+        for _ in wellnessData {
+            wellnessLevels[index] = Int(arc4random_uniform(3))
+//
+//            if rn == 0{
+//                wellnessLevels[index] = 0
+//            }
+//            else if rn == 1{
+//                wellnessLevels[index] = 1
+//            }
+//            else {
+//                wellnessLevels[index] = 2
+//            }
             index = index + 1
         }
         
@@ -150,6 +155,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
             goodCell.wellnessLevelView.backgroundColor = wellnessGood
         }
         else {
+            goodCell.wellnessLevelView.backgroundColor = wellnessGood
             print("Wellness level not appropriate")
             return
         }
@@ -191,7 +197,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
             goodCell.selectedView.layer.borderColor = selectedDayBorderColor.cgColor
             goodCell.selectedView.layer.borderWidth = 5.0
             goodCell.selectedView.layer.backgroundColor = transparentColor.cgColor
-            formatter.dateFormat = "MMMM dd"
+            formatter.dateFormat = "EE MMMM dd"
             let tt = formatter.string(from: cellState.date)
             setDayViewTitle(newTitle: tt) //formatter.string(from: cellState.date))
             
@@ -269,8 +275,22 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     func setDayViewTitle(newTitle: String) {
         dayViewTitle.text = newTitle
         dayViewTitle.font = UIFont(name: "Roboto", size: 24)
-        
     }
+    
+    func setDailyViewLabels() {
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+
+        formatter.dateFormat = "MMM"
+        let thisMonth = formatter.string(from: currDate as Date).uppercased()
+        
+        formatter.dateFormat = "dd"
+        let todaysDate = formatter.string(from: currDate as Date)
+
+        DailyViewDate.text = todaysDate
+        DailyViewMonth.text = thisMonth
+    }
+    
     func prepareDayTitleLabel() {
         dayViewTitle.textAlignment = .center
         dayViewTitle.frame = CGRect(x: 0.0, y: 0.0, width: self.dayView.frame.size.width, height: 20)
@@ -351,8 +371,8 @@ extension ViewController: JTAppleCalendarViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        
-        let startDate = formatter.date(from: "2017 11 01")!
+//        let ds = formatter.string(from: currDate as Date)
+        let startDate = formatter.date(from: "2017 01 01")!
         let endDate = formatter.date(from: "2017 12 30")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate )
