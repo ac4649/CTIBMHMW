@@ -44,6 +44,32 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK: - getting data back from tableview
+    
+    func getDataFromTableView()->[String] {
+        
+        let numberDataPoints = tableView.numberOfRows(inSection: 0)
+        
+        var answersArray:[String] = []
+        
+        for i in 0..<numberDataPoints {
+            let curIndexPath = IndexPath(row: i, section: 0)
+            let theCell = tableView.cellForRow(at: curIndexPath) as! TreatmentQuestionTableViewCell
+            answersArray.append(theCell.numberLabel.text!)
+        }
+        return answersArray
+    }
+    
+    func createCustomizedSchedule()->[Int]{
+        
+        let responses = getDataFromTableView()
+        print(responses)
+        
+        return [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2]
+        
+    }
+    
     //MARK: - Picker View
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -86,13 +112,14 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         print("Segueing to view, passing data")
+        print("Segueing to view, passing data")
+        
         if (segue.identifier == "WizzyToView"){
             print("Wizard to Main View")
             // Pass data
             let VC = segue.destination as! ViewController
-            
-            VC.wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2].reversed()
+            print(currentTreatment)
+            VC.wellnessData = createCustomizedSchedule().reversed()
         }
     }
 

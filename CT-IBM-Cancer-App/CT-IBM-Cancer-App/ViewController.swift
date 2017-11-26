@@ -44,6 +44,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     let numDataPoints = 100
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
     var wellnessData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].reversed()
+    
+    //[7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2].reversed()
+    
     var wellnessLevels = [Int](repeating:0, count:100)
     let currDate = Date()
     
@@ -107,6 +110,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     override func viewDidAppear(_ animated: Bool) {
         //load data and update the wellness status for the 42 days on screen
         var curDay = 0
+        print(wellnessData)
         print(wellnessLevels)
         for curCell in calView.visibleCells {
             guard let theCell = curCell as? CustomCell else {return}
