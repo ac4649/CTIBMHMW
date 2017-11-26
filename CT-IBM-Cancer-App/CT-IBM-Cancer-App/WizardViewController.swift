@@ -81,14 +81,19 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return cell
     }
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+         print("Segueing to view, passing data")
+        if (segue.identifier == "WizzyToView"){
+            print("Wizard to Main View")
+            // Pass data
+            let VC = segue.destination as! ViewController
+            
+            VC.wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2].reversed()
+        }
     }
-    */
 
 }

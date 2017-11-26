@@ -11,7 +11,7 @@ import JTAppleCalendar
 
 
 class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
-
+    
     @IBOutlet weak var calView: JTAppleCalendarView!
     @IBOutlet weak var dayView: UIView!
     @IBOutlet weak var monthLabel: UILabel!
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
 
     let numDataPoints = 100
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
-    let wellnessData = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2].reversed()
+    var wellnessData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].reversed()
     var wellnessLevels = [Int](repeating:0, count:100)
     let currDate = Date()
     
