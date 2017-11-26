@@ -41,13 +41,13 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         }
     }
 
-    let numDataPoints = 100
+    let numDataPoints = 42
     //wellnessData is normal but expected as inverted by calendar so we call.reversed on it)
-    var wellnessData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0].reversed()
+    var wellnessData = [Int](repeating:0, count:42).reversed()
     
     //[7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2].reversed()
     
-    var wellnessLevels = [Int](repeating:0, count:100)
+    var wellnessLevels = [Int](repeating:0, count:42)
     let currDate = Date()
     
     //Fake data
@@ -128,18 +128,22 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     
     func prepareData(){
         var index = 0
-        for _ in wellnessData {
-            wellnessLevels[index] = Int(arc4random_uniform(3))
-//
-//            if rn == 0{
-//                wellnessLevels[index] = 0
-//            }
-//            else if rn == 1{
-//                wellnessLevels[index] = 1
-//            }
-//            else {
-//                wellnessLevels[index] = 2
-//            }
+        
+//        for i in 0..<42{
+//            wellnessLevels[i] = Int(arc4random_uniform(3))
+//        }
+        wellnessLevels = [Int](repeating:0, count:wellnessData.count)
+        for rn in wellnessData {
+            
+            if rn > 6{
+                wellnessLevels[index] = 2
+            }
+            else if rn < 4{
+                wellnessLevels[index] = 0
+            }
+            else {
+                wellnessLevels[index] = 1
+            }
             index = index + 1
         }
         
@@ -376,8 +380,8 @@ extension ViewController: JTAppleCalendarViewDataSource {
         formatter.locale = Calendar.current.locale
         
 //        let ds = formatter.string(from: currDate as Date)
-        let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2017 12 30")!
+        let startDate = formatter.date(from: "2017 11 01")!
+        let endDate = formatter.date(from: "2017 11 30")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate )
         return parameters
