@@ -12,6 +12,10 @@ import JTAppleCalendar
 
 class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    
     @IBOutlet weak var calView: JTAppleCalendarView!
     @IBOutlet weak var dayView: UIView!
     @IBOutlet weak var monthLabel: UILabel!
@@ -73,15 +77,23 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
     
     let formatter = DateFormatter()
     
+    
+    var todayCell:CustomCell = CustomCell()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        print("1")
         prepareData()
+        print("2")
         prepareDayTitleLabel()
+        print("3")
         prepareDayView()
+        print("4")
         prepareJournalView()
+        print("5")
         setDailyViewLabels()
+        print("6")
         dailyDetailsView.isHidden = true
         scroller.delegate = self
         
@@ -105,6 +117,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
             self.setupViewsOfCalendar(from: visibleDates)
             
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,12 +125,15 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         var curDay = 0
         print(wellnessData)
         print(wellnessLevels)
+
         for curCell in calView.visibleCells {
             guard let theCell = curCell as? CustomCell else {return}
             theCell.wellnessLevel = wellnessLevels[curDay]
             updateWellness(cell: theCell)
             curDay = curDay + 1
         }
+        
+        updateTopText(cell: todayCell) //message should be updated for today's wellness level
         
     }
 
@@ -171,10 +187,35 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         calView.reloadData()
     }
     
+    func updateTopText(cell: CustomCell?){
+        print("WelnessLevel of this day: " )
+        print(cell?.wellnessLevel)
+        if (cell?.wellnessLevel == 0)
+        {
+            messageLabel.text = "You may have a rough day, but it'll get better!"
+        }
+        else if (cell?.wellnessLevel == 1)
+        {
+            messageLabel.text = "You've seen worse days! Go do something!"
+        }
+        else if (cell?.wellnessLevel == 2)
+        {
+            messageLabel.text = "It's relatively calm today - things are looking goode! Go for a walk!"
+        }
+        else {
+            print("Don't know what to say")
+        }
+    }
+    
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState){
         
         guard let goodCell = view as? CustomCell else {return}
+        
+        let today = Date.init(timeIntervalSinceNow: 0)
+        if today == cellState.date{
+            updateTopText(cell: goodCell)
+        }
         
         if cellState.isSelected {
             goodCell.dataLabel.textColor = selectedDayTextColor
@@ -391,14 +432,24 @@ extension ViewController: JTAppleCalendarViewDataSource {
 
 extension ViewController: JTAppleCalendarViewDelegate {
     
-    
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "MyCustomCell", for: indexPath) as! CustomCell
         
-
+        
         cell.dataLabel.text  = cellState.text
 //        print(cellState.date)
 //        print(cell.wellnessLevel)
+        let today = Date()
+        
+        if (today.timeIntervalSinceNow - cellState.date.timeIntervalSinceNow < 86400) {
+            if (today.timeIntervalSinceNow - cellState.date.timeIntervalSinceNow > 0) {
+                print("Same Date")
+                print(today.timeIntervalSinceNow - cellState.date.timeIntervalSinceNow)
+                print(today)
+                print(cellState.date)
+                todayCell = cell
+            }
+        }
         
         handleCellSelection(view:cell, cellState:cellState)
         handleCellTextColor(view:cell, cellState: cellState)

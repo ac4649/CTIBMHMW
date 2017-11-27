@@ -500,6 +500,7 @@
                         <outlet property="dailyDetailsView" destination="xpa-3t-9Zw" id="xM1-aE-i1U"/>
                         <outlet property="dayView" destination="5KE-RI-SUZ" id="won-73-dMk"/>
                         <outlet property="journalDayViewToggle" destination="Tct-uV-BU0" id="Zer-f1-ir6"/>
+                        <outlet property="messageLabel" destination="xPO-aS-J2O" id="Xsu-U8-Ng9"/>
                         <outlet property="monthLabel" destination="usS-ET-S2o" id="4t8-yL-v6k"/>
                         <outlet property="scroller" destination="Aht-z3-4Bw" id="Pkf-OT-pRe"/>
                     </connections>
