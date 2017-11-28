@@ -49,15 +49,15 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func getDataFromTableView()->[String] {
         
-        let numberDataPoints = tableView.numberOfRows(inSection: 0)
+//        let numberDataPoints = tableView.numberOfRows(inSection: 0)
         
         var answersArray:[String] = []
-        
-        for i in 0..<numberDataPoints {
-            let curIndexPath = IndexPath(row: i, section: 0)
-            let theCell = tableView.cellForRow(at: curIndexPath) as! TreatmentQuestionTableViewCell
-            answersArray.append(theCell.numberLabel.text!)
-        }
+//
+//        for i in 0..<numberDataPoints {
+//            let curIndexPath = IndexPath(row: i, section: 0)
+//            let theCell = tableView.cellForRow(at: curIndexPath) as! TreatmentQuestionTableViewCell
+//            answersArray.append(theCell.numberLabel.text!)
+//        }
         return answersArray
     }
     
@@ -72,14 +72,16 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             //do computations for surgery treatment
             
             
-            treatmentSchedule = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2]
+            treatmentSchedule = [7,2,1,3,2,3,2,3,2,3,6,6,6,6,6,6,6,6,6,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]
+            
+            print(treatmentSchedule.count)
         }
         else if (currentTreatment == Treatment.Chemotherapy){
             //do computations for chemo treatment
             
             
             
-            treatmentSchedule = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2]
+            treatmentSchedule = [7,2,1,3,2,3,4,4,5,6,6,6,7,7,7,7,7,7,7,7,7,7,2,1,3,2,3,4,4,5,6,6,6,7,7,7,7,7,7,7,7,7]
 
         }
         else if (currentTreatment == Treatment.RadiationTherapy){
@@ -87,7 +89,7 @@ class WizardViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             
             
-            treatmentSchedule = [7,1,1,4,4,4,7,7,1,1,4,4,4,7,7,1,1,1,4,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2,3,4,5,5,5,5,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,2,1,3,4,5,6,6,6,6,7,7,7,1,1,1,2]
+            treatmentSchedule = [7,2,1,3,2,3,4,4,5,6,6,6,7,7,7,7,7,7,7,7,7,7,2,1,3,2,3,4,4,5,6,6,6,7,7,7,7,7,7,7,7,7]
 
         }
         else{

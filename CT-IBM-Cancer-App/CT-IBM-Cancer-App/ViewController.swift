@@ -192,15 +192,15 @@ class ViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate
         print(cell?.wellnessLevel)
         if (cell?.wellnessLevel == 0)
         {
-            messageLabel.text = "You may have a rough day, but it'll get better!"
+            messageLabel.text = "Lauren may have a rough day, but it'll get better!"
         }
         else if (cell?.wellnessLevel == 1)
         {
-            messageLabel.text = "You've seen worse days! Go do something!"
+            messageLabel.text = "Lauren's seen worse days! Go do something!"
         }
         else if (cell?.wellnessLevel == 2)
         {
-            messageLabel.text = "It's relatively calm today - things are looking goode! Go for a walk!"
+            messageLabel.text = "It's relatively calm today - things are looking good! Go for a walk!"
         }
         else {
             print("Don't know what to say")
